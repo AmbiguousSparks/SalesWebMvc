@@ -5,13 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Server.IIS" Version="2.2.6" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <Compile Remove="Areas\Departments\Data\**" />
+    <Compile Remove="Areas\Departments\Models\ViewModels\**" />
+    <Content Remove="Areas\Departments\Data\**" />
+    <Content Remove="Areas\Departments\Models\ViewModels\**" />
+    <EmbeddedResource Remove="Areas\Departments\Data\**" />
+    <EmbeddedResource Remove="Areas\Departments\Models\ViewModels\**" />
+    <None Remove="Areas\Departments\Data\**" />
+    <None Remove="Areas\Departments\Models\ViewModels\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Departments\Data\" />
-    <Folder Include="Areas\Departments\Models\ViewModels\" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IIS" Version="2.2.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
 </Project>
