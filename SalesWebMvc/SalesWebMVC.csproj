@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Compile Include="Data\SalesWebMVCContext.cs" />
+    <Compile Include="Data\SeedingService.cs" />
   </ItemGroup>
 
   <ItemGroup>

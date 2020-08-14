@@ -1,11 +1,13 @@
 ﻿using SalesWebMVC.Areas.SalesRecords.Models.Enums;
 using SalesWebMVC.Areas.Sellers.Models;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SalesWebMVC.Areas.SalesRecords.Models
 {
     public class SalesRecord
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public double Amount { get; set; }

@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using SalesWebMVC.Areas.SalesRecords.Models;
 using System.Linq;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SalesWebMVC.Areas.Sellers.Models
 {
     public class Seller
     {
         #region Properties
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
