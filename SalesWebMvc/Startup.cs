@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using SalesWebMVC.Data;
 
 namespace SalesWebMvc
 {
@@ -32,6 +35,11 @@ namespace SalesWebMvc
             {
                 options.ForwardClientCertificate = false;
             });
+
+            Configuracao.Tema = Configuration.GetSection("Theme").Value;
+
+            services.AddDbContext<SalesWebMVCContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("SalesWebMVCContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,17 +61,24 @@ namespace SalesWebMvc
 
             app.UseAuthorization();
 
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapAreaControllerRoute(
                     name: "Padrao",
                     areaName: "Departments",
                     pattern: "Department/{controller=Departments}/{action=Index}/{id?}"
-                    );
+                    );                
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+    }
+
+
+    public class Configuracao
+    {
+        public static string Tema { get; set; }
     }
 }
