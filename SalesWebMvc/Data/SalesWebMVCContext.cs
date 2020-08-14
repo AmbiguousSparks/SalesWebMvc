@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Areas.Departments.Models;
+using SalesWebMVC.Areas.SalesRecords.Models;
+using SalesWebMVC.Areas.Sellers.Models;
 
 namespace SalesWebMVC.Data
 {
@@ -11,5 +13,7 @@ namespace SalesWebMVC.Data
         }
 
         public DbSet<Department> Department { get; set; }
+        public DbSet<Seller> Seller { get; set; }
+        public DbSet<SalesRecord> SalesRecord { get; set; }
     }
 }

@@ -47,6 +47,13 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\SalesRecords\Controllers\" />
+    <Folder Include="Areas\SalesRecords\Views\" />
+    <Folder Include="Areas\Sellers\Controllers\" />
+    <Folder Include="Areas\Sellers\Views\" />
+  </ItemGroup>
+
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptTarget>ES2015</TypeScriptTarget>
     <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
